@@ -48,6 +48,8 @@ class ComicsController extends Controller
         $newComic->sales_data = $newComicData["sales_data"];
         $newComic->description = $newComicData["description"];
         $newComic->save();
+
+        return redirect()->route('comics.show', $newComic->id);
     }
 
     /**
