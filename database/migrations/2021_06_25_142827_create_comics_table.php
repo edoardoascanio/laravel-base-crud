@@ -14,8 +14,7 @@ class CreateComicsTable extends Migration
      *
      * @return void
      */
-    public function up()
-    {
+    public function up(){
         Schema::create('comics', function (Blueprint $table) {
             $table->integer("id")->autoIncrement();
             $table->string("title", 50);
@@ -34,8 +33,15 @@ class CreateComicsTable extends Migration
      *
      * @return void
      */
-    public function down()
-    {
-        Schema::dropIfExists('comics');
+    public function down(){
+        Schema::table('comics', function (Blueprint $table) {
+            $table->dropColumn("id");
+            $table->dropColumn("title");
+            $table->dropColumn("description");
+            $table->dropColumn("price");
+            $table->dropColumn("series");
+            $table->dropColumn("sale_date");
+            $table->dropColumn("type");  
+        });
     }
 }

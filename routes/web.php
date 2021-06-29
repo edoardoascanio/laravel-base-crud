@@ -19,4 +19,7 @@ Route::post('/comics', 'ComicsController@store')->name('comics.store');
 
 Route::get('/comics/create', 'ComicsController@create')->name('comics.create');
 
-Route::get('/comics/{Id}', 'ComicsController@show')->name('comics.show');
+Route::get('/comics/{user}', 'ComicsController@show')->name('comics.show');
+
+Route::get('/comics/{user}/edit', 'ComicsController@edit')->name('comics.edit');
+
