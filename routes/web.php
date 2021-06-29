@@ -19,7 +19,11 @@ Route::post('/comics', 'ComicsController@store')->name('comics.store');
 
 Route::get('/comics/create', 'ComicsController@create')->name('comics.create');
 
-Route::get('/comics/{user}', 'ComicsController@show')->name('comics.show');
+Route::get('/comics/{user}', 'ComicsController@show')->name('comics.
+show');
+
+Route::match(["PUT", "PATCH"],'/comics/{user}', 'ComicsController@update')->name('comics.
+update');
 
 Route::get('/comics/{user}/edit', 'ComicsController@edit')->name('comics.edit');
 
