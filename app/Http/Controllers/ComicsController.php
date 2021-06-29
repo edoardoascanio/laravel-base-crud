@@ -28,7 +28,7 @@ class ComicsController extends Controller
      */
     public function create()
     {
-        return view("users.create");
+        return view("comics.create");
     }
 
     /**
@@ -58,13 +58,9 @@ class ComicsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id){
+    public function show(Comic $comic){
 
-        $singleComic = Comic::find($id);
-
-        return view('comics.show',[
-            'singleComic' => $singleComic
-        ]);  
+        return view('comics.show'. compact("comic"));  
     }
 
     /**
@@ -77,7 +73,7 @@ class ComicsController extends Controller
         $comic = Comic::find($id);
 
         return view('comics.edit',[
-            'user' => $comic
+            'comic' => $comic
         ]);    
     }
 
