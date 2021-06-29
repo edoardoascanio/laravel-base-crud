@@ -6,7 +6,7 @@
 
 @section('content')
 
-<form action=""method="post">
+<form action="{{ route ('comics.update', $comic->id) }}" method="post">
 
     @csrf
 

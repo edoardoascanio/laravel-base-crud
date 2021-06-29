@@ -58,9 +58,13 @@ class ComicsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Comic $comic){
+    public function show($id){
 
-        return view('users.show'. compact("user"));  
+        $singleComic = Comic::find($id);
+
+        return view('comics.show',[
+            'singleComic' => $singleComic
+        ]);  
     }
 
     /**
@@ -72,7 +76,7 @@ class ComicsController extends Controller
     public function edit($id){
         $comic = Comic::find($id);
 
-        return view('users.edit',[
+        return view('comics.edit',[
             'user' => $comic
         ]);    
     }
