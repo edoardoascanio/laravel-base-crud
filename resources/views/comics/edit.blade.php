@@ -10,7 +10,7 @@
 
     @csrf
 
-    @method('PUT')
+    @method('PATCH')
 
     <label for="title">Title</label>
     <input type="text" name="title" id="title" value="{{$comic->title}}">

@@ -17,11 +17,11 @@
                 <li>{{ $comic->type}}</li>
                 <li>
                     <a href="{{route ('comics.show', $user->id )}}">Mostra dettagli</a>
-                </li>
-
-                <li>
+              
                     <a href="{{route ('comics.edit', $user->id )}}">Modifica</a>
                 </li>
+
+                @include('components.deleteBtn',["comic" => $comic])
             </ul>
         </div>  
     } 
