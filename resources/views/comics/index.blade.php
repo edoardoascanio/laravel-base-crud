@@ -21,7 +21,7 @@
                     <a href="{{route ('comics.edit', $user->id )}}">Modifica</a>
                 </li>
 
-                @include('components.deleteBtn',["comic" => $comic])
+                @include('components.deleteBtn',["id" => $comic->id])
             </ul>
         </div>  
     } 
