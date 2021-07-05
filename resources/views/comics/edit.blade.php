@@ -9,7 +9,6 @@
 <form action="{{ route ('comics.update', $comic->id) }}" method="post">
 
     @csrf
-
     @method('PATCH')
 
     <label for="title">Title</label>

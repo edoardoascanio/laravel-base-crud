@@ -4,4 +4,5 @@
     @method('DELETE')
 
     <input type="submit" value="Cancella">
+    
 </form>    
